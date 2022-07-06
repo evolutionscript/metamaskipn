@@ -1,0 +1,28 @@
+{
+  "name": "evolutionscript/metamaskipn",
+  "description": "Accept payments from Metamask wallets with Binance Smart Chain (BSC) tokens, use it with FIAT or other cryptos.",
+  "license": "MIT",
+  "type": "library",
+  "keywords": [
+    "binance",
+    "bsc",
+    "tokens",
+    "metamask"
+  ],
+  "authors": [
+    {
+      "name": "EvolutionScript",
+      "homepage": "https://www.evolutionscript.com/"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "EvolutionScript\\MetamaskIPN\\": "src"
+    }
+  },
+  "require": {
+    "php": ">=7.4",
+    "evolutionscript/currency_api": "1.*",
+    "evolutionscript/crypto_api": "1.*"
+  }
+}
