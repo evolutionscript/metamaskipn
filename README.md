@@ -53,7 +53,7 @@ $button_code_2 = $metamaskIPN->from_crypto(1,'SOL')
 echo $button_code_2;
 
 //If we are going to use the shopping cart URL, then we can specify item name and other items.
-$shopping_car_url = $metamaskIPN->from_crypto(55,'USD')
+$shopping_car_url = $metamaskIPN->from_crypto(55,'XRP')
 	->to_crypto('BNB')
 	->site_id(0)
 	->custom_1('custom_parameter')
