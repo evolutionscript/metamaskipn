@@ -89,7 +89,7 @@ class MetamaskIPN
 			'ETH' => 'ETH',
 			'LTC' => 'LTC',
 			'USDT' => 'USD',
-			'Cake' => 'CAKE',
+			'CAKE' => 'CAKE',
 			'UNI' => 'UNI'
 		];
 	}
