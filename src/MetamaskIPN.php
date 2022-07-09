@@ -11,7 +11,7 @@ class MetamaskIPN
 	private $crypto_api;
 	private $base_currency = 'USD';
 	private $fiat_amount = 0;
-	private $deposit_amount = 0;
+	public $deposit_amount = 0;
 	private $site_id = 0;
 	private $token = '';
 	private $custom_1 = null;
@@ -89,7 +89,7 @@ class MetamaskIPN
 			'ETH' => 'ETH',
 			'LTC' => 'LTC',
 			'USDT' => 'USD',
-			'CAKE' => 'CAKE',
+			'Cake' => 'CAKE',
 			'UNI' => 'UNI'
 		];
 	}
@@ -157,7 +157,7 @@ class MetamaskIPN
 		return $this;
 	}
 
-	public function button_code($button_text='')
+	public function button_code($button_text='', $reset=true)
 	{
 		$params['site'] = $this->site_id;
 		$params['token'] = $this->token;
@@ -180,7 +180,9 @@ class MetamaskIPN
 		$params['amount'] = $this->deposit_amount;
 		$query = http_build_query($params);
 		$code = '<iframe src="https://metamaskipn.com/button?'.$query.'" style="border: 0; overflow: hidden"></iframe>';
-		$this->reset_params();
+		if($reset){
+			$this->reset_params();
+		}
 		return $code;
 	}
 
@@ -224,7 +226,7 @@ class MetamaskIPN
 		return $code;
 	}
 
-	private function reset_params()
+	public function reset_params()
 	{
 		$this->fiat_amount = 0;
 		$this->deposit_amount = 0;
